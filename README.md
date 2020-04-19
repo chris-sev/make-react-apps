@@ -1,6 +1,6 @@
 # Make 20 React Apps
 
-![](https://scotch-res.cloudinary.com/image/upload/v1587260533/make-20-react-apps-1200-630_rnrnvg.png)
+![](https://i.imgur.com/gTADDDE.png)
 
 In this repo, you'll find the starter files and the finished files for the 20 React Apps that we make in the course: [Make 20 React Apps](https://20ReactApps.com)
 
