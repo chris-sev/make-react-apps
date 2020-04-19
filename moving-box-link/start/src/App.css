@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-image: url('https://i.imgur.com/noNWRPk.png'); */
+}
+
+.app {
+  position: relative;
+  height: 100vh;
+}
+
+.arrows {
+  display: grid;
+  grid-template: auto auto / auto auto auto;
+  grid-template-areas:
+    '. up .'
+    'left down right';
+  grid-gap: 8px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.arrows button {
+  cursor: pointer;
+  font-size: 16px;
+  width: 60px;
+  height: 40px;
+  background: rgba(43, 159, 75, 0.811);
+  color: rgb(167, 220, 182);
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease all;
+}
+
+.arrows button:hover {
+  background: rgba(51, 177, 87, 0.811);
+  color: #fff;
+}
+
+.arrows button:first-child {
+  grid-area: up;
+}
+
+.arrows button:nth-child(2) {
+  grid-area: left;
+}
+
+.arrows button:nth-child(3) {
+  grid-area: down;
+}
+
+.arrows button:last-child {
+  grid-area: right;
+}
+
+.images {
+  display: none;
+}
