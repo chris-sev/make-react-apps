@@ -1,10 +1,14 @@
 # Make 20 React Apps
 
-![](https://i.imgur.com/gTADDDE.png)
-
 In this repo, you'll find the starter files and the finished files for the 20 React Apps that we make in the course: [Make 20 React Apps](https://20ReactApps.com)
 
+![](https://i.imgur.com/gTADDDE.png)
+
 ## To Start
+
+Clone this repo. Or you can fork it so that you can track your progress in your own repo.
+
+1. Clone it: `git clone git@github.com:chris-on-code/20-react-apps.git`
 
 Each application has its own folder. In each app folder is a `finished` and `start` folder. You can see the final app or start working in the start folder with the following steps:
 
