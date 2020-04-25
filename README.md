@@ -18,7 +18,7 @@ Each application has its own folder. In each app folder is a `finished` and `sta
 
 ## The 20 Apps + Preview + Demo
 
-1. [Pomodoro](https://github.com/chris-on-code/20-react-apps/tree/master/pomodoro) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/250927-moving-boxes-and-zelda/748714-00-moving-boxes-and-link-preview) - [Demo](https://391jg.codesandbox.io/)
+1. [Pomodoro](https://github.com/chris-on-code/20-react-apps/tree/master/pomodoro) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249106-pomodoro/748623-00-pomodoro-preview) - [Demo](https://r36qd.codesandbox.io/)
 1. [Markdown Editor](https://github.com/chris-on-code/20-react-apps/tree/master/markdown-editor) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249710-markdown-editor/748732-00-markdown-editor-preview) - [Demo](https://391jg.codesandbox.io/)
 1. [Browser Tabs](https://github.com/chris-on-code/20-react-apps/tree/master/browser-tabs) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249108-browser-tabs/748775-00-browser-tabs-preview) - [Demo](https://yyhfg.codesandbox.io/)
 1. [Paper Rock Scissors](https://github.com/chris-on-code/20-react-apps/tree/master/paper-rock-scissors) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249667-paper-rock-scissors/748691-00-paper-rock-scissors-preview) - [Demo](https://njpw4.codesandbox.io/)
