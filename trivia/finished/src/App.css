@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #454545;
+}
+
+.app {
+  max-width: 500px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.streak-checker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.streak-checker progress {
+  margin: 0;
+}
+
+/* header section ---------------------- */
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.category-selector {
+  max-width: 60%;
+}
+
+.category-selector select {
+  font-size: 16px;
+  width: 100%;
+}
+
+.category-selector p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.scoreboard > div:first-child {
+  margin-right: 25px;
+}
+
+.scoreboard .wrong {
+  color: rgb(211, 79, 79);
+}
+
+.scoreboard .correct {
+  color: rgb(63, 162, 63);
+}
+
+.scoreboard strong {
+  color: #555;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.result-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-modal .overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.result-modal-content {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 30px;
+  width: 400px;
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-modal.is-correct h3 {
+  color: rgb(63, 162, 63);
+}
+
+.result-modal.is-wrong h3 {
+  color: rgb(211, 79, 79);
+}
+
+.result-modal-content h3 {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.result-modal-content .correct-answer {
+  margin-bottom: 20px;
+}
+
+.result-modal-content .correct-answer small {
+  color: #777;
+}
+
+.result-modal-content .correct-answer strong {
+  font-size: 40px;
+}
+
+/* main section ---------------------- */
+
+.question-main {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  min-width: 500px;
+  max-width: 90%;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.question {
+  width: 100%;
+}
+
+.question h2 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #195e5b;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 0.8rem;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  border-color: #38a89d;
+  background-color: #4dc0b5;
+  transition: 0.2s ease all;
+  line-height: 1;
+}
+
+button:hover {
+  background-color: #a0f0ed;
+  box-shadow: 2px 5px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* footer section ---------------------- */
+
+.question-footer {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.question-footer button {
+  background: #ccc;
+  border-color: #aaa;
+  color: #777;
+  width: auto;
+  margin-left: auto;
+  font-size: 12px;
+  padding: 10px 20px;
+}
+
+/* putting down here because the svg pattern is so long */
+body {
+  background-color: #c7e8d9;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23bff0da' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
