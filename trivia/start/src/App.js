@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className="app">
       {/* show the result modal ----------------------- */}
-      <ResultModal />
+      {/* <ResultModal /> */}
 
       {/* question header ----------------------- */}
       <div className="question-header">
