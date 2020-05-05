@@ -29,7 +29,10 @@ export default function App() {
         const imagesFromApi = data.results ?? data;
 
         // if page is 1, then we need a whole new array of images
-        if (page === 1) setImages(imagesFromApi);
+        if (page === 1) {
+          setImages(imagesFromApi);
+          return;
+        }
 
         // if page > 1, then we are adding for our infinite scroll
         setImages((images) => [...images, ...imagesFromApi]);
