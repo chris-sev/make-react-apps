@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  padding: 50px;
+  padding: 30px;
   background: #1f1f1f;
   color: #777;
 }
@@ -34,7 +34,7 @@ h5,
 h6 {
   font-family: 'Luckiest Guy';
   color: #fbca17;
-  font-size: 80px;
+  font-size: 60px;
   margin-top: 0;
   line-height: 1;
   margin-bottom: 10px;
