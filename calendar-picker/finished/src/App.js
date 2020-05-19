@@ -7,19 +7,19 @@ const calendarDates = Array(31)
   .map((e, i) => i);
 
 export default function App() {
-  const [choosingType, setChoosingType] = useState('start');
+  const [choosingType, setChoosingType] = useState('start'); // start or end
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [hoverDate, setHoverDate] = useState(null);
 
   function updateDate(chosenDay) {
-    // handle if they chose before the current range
+    // handle if a user chose before our current range
     if (startDate && chosenDay < startDate) {
       setStartDate(chosenDay);
       return setChoosingType('end');
     }
 
-    // handle if they chose after the current range
+    // handle if a user chose after our current range
     if (endDate && chosenDay > endDate) {
       setEndDate(chosenDay);
       return setChoosingType('end');
@@ -30,22 +30,19 @@ export default function App() {
       return setChoosingType('end');
     }
 
-    setEndDate(chosenDay);
-  }
-
-  function handleHover(day) {
-    if (!startDate) return;
-    setHoverDate(day);
+    if (choosingType === 'end') {
+      setEndDate(chosenDay);
+    }
   }
 
   function checkInBetween(day) {
-    if (!endDate) return day > startDate && day < hoverDate;
+    if (startDate && !endDate) return day > startDate && day < hoverDate;
     return day > startDate && day < endDate;
   }
 
   return (
     <>
-      <StyledDateChooser choosingType={choosingType}>
+      <StyledDateChooser>
         <StyledDateChooserButton
           onClick={() => setChoosingType('start')}
           isChoosing={choosingType === 'start'}
@@ -62,24 +59,18 @@ export default function App() {
 
       <StyledCalendar>
         {calendarDates.map((day, index) => {
-          const dayNumber = index + 1;
-          let isInBetween = checkInBetween(dayNumber);
+          const dayNumber = day + 1;
 
-          let isSelected = false;
-          if (dayNumber === startDate) isSelected = true; // start
-          if (dayNumber === endDate) isSelected = true; // end
+          let isInBetween = checkInBetween(dayNumber);
+          let isSelected = dayNumber === startDate || dayNumber === endDate;
 
           return (
             <StyledCalendarDay
               key={index}
-              isSelected={isSelected}
               isInBetween={isInBetween}
-              isEnd={endDate === dayNumber}
+              isSelected={isSelected}
               onClick={() => updateDate(dayNumber)}
-              onMouseEnter={() => {
-                if (endDate) return;
-                handleHover(dayNumber);
-              }}
+              onMouseOver={() => setHoverDate(dayNumber)}
             >
               {dayNumber}
             </StyledCalendarDay>
@@ -141,19 +132,19 @@ const StyledCalendarDay = styled.button`
   ${(props) =>
     props.isInBetween &&
     css`
-      color: #fff;
-      background: #254381;
+      background: #254381 !important;
+      color: #eee;
     `}
 
   ${(props) =>
     props.isSelected &&
     css`
-      color: #fff;
-      background: #030d24;
+      background: #1a1a1a !important;
+      color: #eee;
     `}
 
   &:hover {
-    color: #fff;
+    color: #eee;
     background: #254381;
   }
 `;
