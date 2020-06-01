@@ -16,13 +16,13 @@ export default function App() {
     <div className="app">
       <div className="walkthrough">
         {messages.map((message, index) => {
-          return <Message key={index} message={message} />;
+          return (
+            <div key={index} className="message">
+              {message.text}
+            </div>
+          );
         })}
       </div>
     </div>
   );
-}
-
-function Message({ message }) {
-  return <div className="message">{message.text}</div>;
 }
