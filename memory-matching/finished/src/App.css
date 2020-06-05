@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #19323a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  line-height: 1;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+p {
+  text-align: right;
+  font-size: 50px;
+  color: #999;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+p strong {
+  font-size: 14px;
+  color: #777;
+}
+
+.cards {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pokemon-card {
+  height: 150px;
+  width: 150px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+.pokemon-card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.pokemon-card .front,
+.pokemon-card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.pokemon-card .front {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.pokemon-card .back {
+  background: #ae1c35;
+  color: #d6aeb5;
+  font-size: 100px;
+  transition: 0.3s ease all;
+}
+
+.pokemon-card .back:hover {
+  background: #cc2f49;
+  color: #fff;
+  transform: scale(1.02);
+}
