@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+// image for the pokemon
+// https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png
+
 const pokemon = [
   { id: 4, name: 'charizard' },
   { id: 10, name: 'caterpie' },
