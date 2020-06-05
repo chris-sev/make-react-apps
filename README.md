@@ -28,7 +28,7 @@ Each application has its own folder. In each app folder is a `finished` and `sta
 
 ## Getting Help
 
-Need some help? I've got a chatbox on my site [courses.chrisoncode.io](https://courses.chrisoncode.io) that you can use to chat with me.
+Need some help? I've got a chatbox on my site [learn.chrisoncode.io](https://learn.chrisoncode.io) that you can use to chat with me.
 
 ## Pull Requests
 
