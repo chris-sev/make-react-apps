@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 30px;
+  color: #444;
+  width: 100%;
+}
+
+.app {
+  background: #cff2dc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  min-width: 500px;
+  min-height: 600px;
+  position: relative;
+}
+
+.animator {
+  position: absolute;
+}
+
+.step-links {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.step-links:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  background: #b2dec2;
+  z-index: 1;
+  top: 43px;
+  left: -20%;
+  width: 150%;
+}
+
+.step-links a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 10px;
+  margin-right: 10px;
+  font-family: 'Merriweather', serif;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  color: #7db491;
+}
+
+.step-links a.disabled {
+  pointer-events: none;
+}
+
+.step-links a:hover {
+  color: #4d9869;
+}
+
+.step-links a.active {
+  color: #215735;
+}
+
+.step-links a.active span {
+  background: #215735;
+}
+
+/* the little circle */
+.step-links a span {
+  display: block;
+  position: absolute;
+  top: 40px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #b2dec2;
+  z-index: 2;
+}
+
+form {
+  background: #fff;
+  border-radius: 30px;
+  padding: 40px;
+  min-width: 500px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form p {
+  color: rgb(184, 109, 109);
+  margin-top: 8px;
+  margin-bottom: 20px;
+  padding-left: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='submit'] {
+  border: none;
+  background: #eee;
+  border-radius: 50px;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  transition: 0.3s ease all;
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+}
+
+input[type='text']:focus,
+input[type='email']:focus {
+  background: #ddd;
+}
+
+input[type='submit'] {
+  width: 40%;
+  margin-left: 60%;
+  margin-bottom: 0;
+  padding: 12px;
+  background: #d68865;
+  font-size: 16px;
+  color: #f9f6f4;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background: #eda27f;
+}
