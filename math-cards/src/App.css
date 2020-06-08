@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+
+:root {
+  --main-border-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 50px;
+  font-family: 'Anonymous Pro';
+  font-weight: 700;
+  line-height: 1;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.math-card {
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid var(--main-border-color);
+  padding: 20px 30px;
+  height: 100%;
+  min-width: 250px;
+  margin-right: 50px;
+  font-size: 50px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(50px, 100px));
+  grid-template-areas:
+    '. number1'
+    'operator number2'
+    'total total';
+}
+
+.spot {
+  border-radius: 5px;
+  padding-right: 15px;
+  transition: 0.3s ease background;
+}
+
+.spot,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.spot:first-child {
+  grid-area: number1;
+}
+
+.spot:nth-child(2) {
+  grid-area: number2;
+}
+
+.spot:nth-child(3) {
+  grid-area: operator;
+}
+
+.total {
+  border-top: 4px solid var(--main-border-color);
+  padding-top: 10px;
+  grid-area: total;
+  justify-content: flex-end;
+  font-size: 100px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid var(--main-border-color);
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+
+.card:hover {
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+body {
+  background-color: #3db897;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%2330a687' fill-opacity='0.4' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+}
