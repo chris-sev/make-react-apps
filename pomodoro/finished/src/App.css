@@ -36,9 +36,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-.buttons {
-}
-
 .buttons button {
   outline: none;
   border: none;
@@ -61,4 +58,18 @@ h2 {
 
 .buttons button:not(:last-child) {
   margin-right: 10px;
+}
+
+@media (max-width: 780px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  .timer {
+    font-size: 80px;
+  }
+
+  .buttons button {
+    font-size: 18px;
+  }
 }
