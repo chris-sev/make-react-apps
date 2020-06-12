@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #396af7;
+  min-height: 100vh;
+  padding: 50px 10px;
+}
+
+.browser {
+  display: flex;
+  flex-direction: column;
+  background: #f3470c;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  min-width: 90%;
+}
+
+.tabs {
+  flex-shrink: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  padding-top: 10px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: #2a55d8;
+  min-width: 150px;
+  font-size: 14px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: 0.3s ease all;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tab button {
+  width: 100%;
+  padding: 6px 15px;
+  color: #bac8f4;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.tab button.close-tab {
+  max-width: 15px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+.tab button.close-tab:hover {
+  color: white;
+}
+
+.tab:last-child {
+  min-width: 40px;
+}
+
+.tab:last-child button {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  color: #bac8f4;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.tab.is-active {
+  background: #4c75f2;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tab.is-active button {
+  color: #fff;
+}
+
+.tab.new-tab {
+  min-width: 50px;
+}
+
+.highlight {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  top: -10px;
+  height: 80px;
+  width: 500px;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease opacity;
+}
+
+.address-bar {
+  background: #2e5eee;
+  padding: 8px;
+}
+
+.address-bar input {
+  background: #184deb;
+  color: #e2e6f4;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.address-bar input:focus {
+  background: #4672f7;
+}
+
+.address-bar input::placeholder {
+  color: #7391ee;
+}
+
+.viewport {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #396af7;
+  color: #d0daf7;
+  flex: 1;
+  flex-grow: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.3s ease all;
+}
+
+.viewport iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 800px;
+}
