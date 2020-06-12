@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 
-export default function Tabs({ browsers, create, close, choose, active }) {
+export default function Tabs({ browsers, active, choose, add, close }) {
   return (
     <div className="tabs">
-      {browsers.map((browser, index) => {
-        return (
-          <Tab
-            key={index}
-            index={index}
-            close={close}
-            choose={choose}
-            isActive={active === index}
-          >
-            <button onClick={() => choose(index)}>{browser}</button>
-          </Tab>
-        );
-      })}
+      {browsers.map((browser, index) => (
+        <Tab
+          key={index}
+          isActive={active === index}
+          index={index}
+          close={close}
+        >
+          <button onClick={() => choose(index)}>{browser}</button>
+        </Tab>
+      ))}
       <Tab>
-        <button onClick={create}>+</button>
+        <button onClick={add}>+</button>
       </Tab>
     </div>
   );
@@ -25,13 +22,13 @@ export default function Tabs({ browsers, create, close, choose, active }) {
 
 function Tab({ index, children, close, isActive }) {
   const [highlightStyle, setHighlightStyle] = useState({
-    left: 0
+    left: 0,
   });
 
   function moveHighlight(e) {
     setHighlightStyle({
       opacity: 0.4,
-      left: e.nativeEvent.layerX - 250
+      left: e.nativeEvent.layerX - 250,
     });
   }
 

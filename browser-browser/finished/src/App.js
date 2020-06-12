@@ -1,70 +1,68 @@
 import React, { useReducer } from 'react';
 import Tabs from './components/Tabs';
-import AddressBar from './components/AddressBar';
 import './App.css';
+import AddressBar from './components/AddressBar';
 
-function getInitialState() {
-  return {
-    browsers: ['https://learn.chrisoncode.io', 'https://kapeheokalani.com'],
-    activeBrowser: 0,
-  };
-}
+function reducer(state, action) {
+  const { browsers, activeBrowser } = state;
+  const { type, payload } = action;
 
-function browserReducer(state, action) {
-  if (action.type === 'ADD') {
-    // add a new tab to browsers
-    const browsers = [...state.browsers, ''];
-    const activeBrowser = browsers.length - 1;
+  if (type === 'ADD') {
+    const newBrowsers = [...browsers, ''];
+    const activeBrowser = newBrowsers.length - 1;
 
     return {
-      browsers,
+      browsers: newBrowsers,
       activeBrowser,
     };
   }
 
-  if (action.type === 'UPDATE') {
-    const browsers = [...state.browsers];
-    browsers[state.activeBrowser] = action.payload;
-
+  if (type === 'CHOOSE') {
     return {
       ...state,
-      browsers,
+      activeBrowser: payload,
     };
   }
 
-  if (action.type === 'CHOOSE') {
+  if (type === 'UPDATE') {
+    const newBrowsers = [...browsers];
+    newBrowsers[activeBrowser] = payload;
+
     return {
       ...state,
-      activeBrowser: action.payload,
+      browsers: newBrowsers,
     };
   }
 
-  if (action.type === 'DELETE') {
-    const oldBrowsers = [...state.browsers];
-    const browsers = oldBrowsers.filter((b, i) => i !== action.payload);
-    const activeBrowser = browsers[state.activeBrowser]
-      ? state.activeBrowser
-      : browsers.length - 1;
+  if (type === 'CLOSE') {
+    const oldBrowsers = [...browsers];
+    const newBrowsers = oldBrowsers.filter((b, index) => index !== payload);
+    const oldUrl = oldBrowsers[activeBrowser];
+
+    const newActiveBrowser =
+      activeBrowser > newBrowsers.length - 1
+        ? newBrowsers.length - 1
+        : newBrowsers.findIndex((b) => b === oldUrl);
 
     return {
-      browsers,
-      activeBrowser,
+      browsers: newBrowsers,
+      activeBrowser: newActiveBrowser,
     };
   }
 }
 
 export default function App() {
-  const [{ browsers, activeBrowser }, dispatch] = useReducer(
-    browserReducer,
-    {},
-    getInitialState
-  );
+  const [{ browsers, activeBrowser }, dispatch] = useReducer(reducer, {
+    browsers: ['https://learn.chrisoncode.io', 'https://codepen.io'],
+    activeBrowser: 0,
+  });
 
-  const createBrowser = () => dispatch({ type: 'ADD' });
   const chooseBrowser = (id) => dispatch({ type: 'CHOOSE', payload: id });
+  const addBrowser = () => dispatch({ type: 'ADD' });
   const updateBrowser = (url) => dispatch({ type: 'UPDATE', payload: url });
-  const closeBrowser = (id) => dispatch({ type: 'DELETE', payload: id });
+  const closeBrowser = (id) => dispatch({ type: 'CLOSE', payload: id });
 
+  // formatting or grabbing of data
   const url = browsers[activeBrowser];
 
   return (
@@ -72,20 +70,16 @@ export default function App() {
       <div className="browser">
         <Tabs
           browsers={browsers}
-          create={createBrowser}
-          choose={chooseBrowser}
-          close={closeBrowser}
           active={activeBrowser}
+          choose={chooseBrowser}
+          add={addBrowser}
+          close={closeBrowser}
         />
 
         <AddressBar update={updateBrowser} url={url} />
 
         <div className="viewport">
-          {browsers[activeBrowser] ? (
-            <iframe src={browsers[activeBrowser]} title="stuff" />
-          ) : (
-            <>New Tab Page</>
-          )}
+          {url ? <iframe src={url} title="Stuff" /> : <>New Tab Page</>}
         </div>
       </div>
     </div>

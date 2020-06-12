@@ -17,6 +17,7 @@ export default function AddressBar({ update, url }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // check for https
     const httpsUrl = addHttps(value);
     update(httpsUrl);
   }
@@ -27,7 +28,7 @@ export default function AddressBar({ update, url }) {
         <input
           type="text"
           name="url"
-          value={value || ''}
+          value={value}
           onChange={(e) => setValue(e.target.value)}
         />
       </form>
