@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabs from './components/Tabs';
-import './App.css';
 import AddressBar from './components/AddressBar';
+import './App.css';
 
 export default function App() {
   return (
