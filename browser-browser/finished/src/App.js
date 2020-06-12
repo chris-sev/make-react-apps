@@ -1,86 +1,71 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useReducer } from 'react';
 import Tabs from './components/Tabs';
-import './App.css';
 import AddressBar from './components/AddressBar';
+import './App.css';
 
-function usePrevious(value) {
-  const ref = useRef();
-
-  useEffect(() => {
-    ref.current = value;
-  });
-
-  const setPrevious = value => (ref.current = value);
-  return [ref.current, setPrevious];
+function getInitialState() {
+  return {
+    browsers: ['https://learn.chrisoncode.io', 'https://kapeheokalani.com'],
+    activeBrowser: 0,
+  };
 }
 
-function App() {
-  const [browsers, setBrowsers] = useState([
-    'https://courses.chrisoncode.io',
-    'https://kapeheokalani.com'
-  ]);
-  const [activeBrowser, setActiveBrowser] = useState(0);
-  const [value, setValue] = useState(browsers[activeBrowser]);
-  const [prevBrowsersCount, setPrevBrowserCount] = usePrevious(browsers.length);
-  const [prevActiveBrowser, setPrevActiveBrowser] = usePrevious(0);
+function browserReducer(state, action) {
+  if (action.type === 'ADD') {
+    // add a new tab to browsers
+    const browsers = [...state.browsers, ''];
+    const activeBrowser = browsers.length - 1;
 
-  useEffect(() => {
-    const browsersCount = browsers.length - 1;
-    setPrevBrowserCount(browsersCount);
-    setPrevActiveBrowser(activeBrowser);
-  });
-
-  useEffect(() => {
-    const browsersCount = browsers.length - 1;
-    const hasAddedBrowser = prevBrowsersCount < browsersCount;
-    const hasRemovedBrowser = prevBrowsersCount > browsersCount;
-
-    if (hasAddedBrowser) {
-      // we added a new tab. set the latest to be active
-      setActiveBrowser(browsersCount);
-      setValue(browsers[browsersCount]);
-    } else if (hasRemovedBrowser) {
-      // we removed a tab. make the old active tab the current one
-      const newActiveBrowser =
-        prevActiveBrowser < browsersCount ? prevActiveBrowser : browsersCount;
-      setActiveBrowser(newActiveBrowser);
-      setValue(browsers[newActiveBrowser]);
-    }
-  }, [browsers, prevActiveBrowser, prevBrowsersCount]);
-
-  /**
-   * Create a browser
-   */
-  function createBrowser() {
-    const newBrowsers = [...browsers, ''];
-    setBrowsers(newBrowsers);
-    setActiveBrowser(newBrowsers - 1);
+    return {
+      browsers,
+      activeBrowser,
+    };
   }
 
-  /**
-   * Close a browser
-   */
-  function closeBrowser(index) {
-    const newBrowsers = browsers.filter((b, i) => i !== index);
-    setBrowsers(newBrowsers);
+  if (action.type === 'UPDATE') {
+    const browsers = [...state.browsers];
+    browsers[state.activeBrowser] = action.payload;
+
+    return {
+      ...state,
+      browsers,
+    };
   }
 
-  /**
-   * Update a browser
-   */
-  function updateBrowser(url) {
-    const newBrowsers = [...browsers];
-    newBrowsers[activeBrowser] = url;
-    setBrowsers(newBrowsers);
+  if (action.type === 'CHOOSE') {
+    return {
+      ...state,
+      activeBrowser: action.payload,
+    };
   }
 
-  /**
-   * Select a browser
-   */
-  function chooseBrowser(index) {
-    setActiveBrowser(index);
-    setValue(browsers[index]);
+  if (action.type === 'DELETE') {
+    const oldBrowsers = [...state.browsers];
+    const browsers = oldBrowsers.filter((b, i) => i !== action.payload);
+    const activeBrowser = browsers[state.activeBrowser]
+      ? state.activeBrowser
+      : browsers.length - 1;
+
+    return {
+      browsers,
+      activeBrowser,
+    };
   }
+}
+
+export default function App() {
+  const [{ browsers, activeBrowser }, dispatch] = useReducer(
+    browserReducer,
+    {},
+    getInitialState
+  );
+
+  const createBrowser = () => dispatch({ type: 'ADD' });
+  const chooseBrowser = (id) => dispatch({ type: 'CHOOSE', payload: id });
+  const updateBrowser = (url) => dispatch({ type: 'UPDATE', payload: url });
+  const closeBrowser = (id) => dispatch({ type: 'DELETE', payload: id });
+
+  const url = browsers[activeBrowser];
 
   return (
     <div className="app">
@@ -88,16 +73,16 @@ function App() {
         <Tabs
           browsers={browsers}
           create={createBrowser}
-          close={closeBrowser}
           choose={chooseBrowser}
+          close={closeBrowser}
           active={activeBrowser}
         />
 
-        <AddressBar setUrl={setValue} updateUrl={updateBrowser} url={value} />
+        <AddressBar update={updateBrowser} url={url} />
 
         <div className="viewport">
           {browsers[activeBrowser] ? (
-            <iframe src={browsers[activeBrowser]} />
+            <iframe src={browsers[activeBrowser]} title="stuff" />
           ) : (
             <>New Tab Page</>
           )}
@@ -106,5 +91,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

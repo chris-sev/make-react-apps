@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function addHttps(url) {
   if (!url.startsWith('http') || !url.startsWith('https')) {
-    console.log('doesnt start with https');
     return `https://${url}`;
   }
+
+  return url;
 }
 
-export default function AddressBar({ updateUrl, url, setUrl }) {
+export default function AddressBar({ update, url }) {
+  const [value, setValue] = useState(url || '');
+
+  useEffect(() => {
+    setValue(url);
+  }, [url]);
+
   function handleSubmit(e) {
     e.preventDefault();
-    const httpsUrl = addHttps(url);
-    console.log(httpsUrl);
-    updateUrl(httpsUrl);
+    const httpsUrl = addHttps(value);
+    update(httpsUrl);
   }
 
   return (
@@ -21,8 +27,8 @@ export default function AddressBar({ updateUrl, url, setUrl }) {
         <input
           type="text"
           name="url"
-          value={url}
-          onChange={e => setUrl(e.target.value)}
+          value={value || ''}
+          onChange={(e) => setValue(e.target.value)}
         />
       </form>
     </div>
