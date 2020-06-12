@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
-export default function Tabs({ browsers, active, choose, add }) {
+export default function Tabs() {
   return (
     <div className="tabs">
-      {browsers.map((browser, index) => (
-        <Tab key={index} isActive={active === index}>
-          <button onClick={() => choose(index)}>{browser}</button>
-        </Tab>
-      ))}
       <Tab>
-        <button onClick={add}>+</button>
+        <button>Click Me</button>
+      </Tab>
+      <Tab>
+        <button>+</button>
       </Tab>
     </div>
   );
