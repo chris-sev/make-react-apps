@@ -1,6 +1,7 @@
 import React from 'react';
 import Tabs from './components/Tabs';
 import './App.css';
+import AddressBar from './components/AddressBar';
 
 export default function App() {
   return (
@@ -8,11 +9,7 @@ export default function App() {
       <div className="browser">
         <Tabs />
 
-        <div className="address-bar">
-          <form>
-            <input type="text" name="url" />
-          </form>
-        </div>
+        <AddressBar />
 
         <div className="viewport">
           <>Tabs Go Here</>
