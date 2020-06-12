@@ -1,5 +1,28 @@
 import React, { useState } from 'react';
 
+export default function Tabs({ browsers, create, close, choose, active }) {
+  return (
+    <div className="tabs">
+      {browsers.map((browser, index) => {
+        return (
+          <Tab
+            key={index}
+            index={index}
+            close={close}
+            choose={choose}
+            isActive={active === index}
+          >
+            <button onClick={() => choose(index)}>{browser}</button>
+          </Tab>
+        );
+      })}
+      <Tab>
+        <button onClick={create}>+</button>
+      </Tab>
+    </div>
+  );
+}
+
 function Tab({ index, children, close, isActive }) {
   const [highlightStyle, setHighlightStyle] = useState({
     left: 0
@@ -29,29 +52,6 @@ function Tab({ index, children, close, isActive }) {
           x
         </button>
       )}
-    </div>
-  );
-}
-
-export default function Tabs({ browsers, create, close, choose, active }) {
-  return (
-    <div className="tabs">
-      {browsers.map((browser, index) => {
-        return (
-          <Tab
-            key={index}
-            index={index}
-            close={close}
-            choose={choose}
-            isActive={active === index}
-          >
-            <button onClick={() => choose(index)}>{browser}</button>
-          </Tab>
-        );
-      })}
-      <Tab>
-        <button onClick={create}>+</button>
-      </Tab>
     </div>
   );
 }
