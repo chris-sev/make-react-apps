@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Question from "./components/Question";
-import CategorySelector from "./components/CategorySelector";
-import ResultModal from "./components/ResultModal";
-import Scoreboard from "./components/Scoreboard";
-import useTrivia from "./useTrivia";
-import "./App.css";
+import React, { useState } from 'react';
+import Question from './components/Question';
+import CategorySelector from './components/CategorySelector';
+import ResultModal from './components/ResultModal';
+import Scoreboard from './components/Scoreboard';
+import useTrivia from './useTrivia';
+import './App.css';
 
 export default function App() {
   const { question, getQuestion, category, setCategory } = useTrivia();
@@ -22,7 +22,6 @@ export default function App() {
 
   return (
     <div className="app">
-      chris was here!!!!
       {/* show the result modal ----------------------- */}
       {isCorrect !== null && (
         <ResultModal
