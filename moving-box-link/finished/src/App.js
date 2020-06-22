@@ -20,7 +20,7 @@ export default function App() {
   // move the box if x or y changes
   useEffect(() => {
     const context = canvasRef.current.getContext('2d');
-    context.clearRect(0, 0, window.innerHeight, window.innerWidth);
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     // context.fillRect(x, y, 100, 100);
 
     let theLinkRef;
