@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #d7e5f9;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.app {
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  background: #4f46b5;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+}
+
+.ais-Stats {
+  text-align: right;
+  color: #fff;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.ais-SearchBox-form {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.ais-SearchBox-form input[type='search'] {
+  background: #383186;
+  border-radius: 10px;
+  padding: 20px 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 28px;
+  color: #eee;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  display: none;
+}
+
+.ais-Hits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ais-Hits-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 780px) {
+  .ais-Hits-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ais-Pagination-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.ais-Pagination-item {
+  flex: 1;
+}
+
+.ais-Pagination-link {
+  display: block;
+  padding: 15px 20px;
+  background: #383186;
+  color: #b3afde;
+  text-decoration: none;
+  text-align: center;
+}
+
+.ais-Pagination-link:hover {
+  background: #251f61;
+  color: #eee;
+}
+
+.product {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 30px;
+  height: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #383186;
+}
+
+.product > div:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.product img {
+  max-width: 100px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.product h3 {
+  font-size: 14px;
+  opacity: 0.5;
+  margin: 0 0 5px;
+}
+
+.product h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.product h2 span {
+  font-size: 16px;
+  opacity: 0.6;
+  display: block;
+}
+
+.product p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.5;
+}
