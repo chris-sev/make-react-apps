@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9dbc9;
+  background-image: url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80');
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.app {
+  background: #e20174;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 0 30px;
+  text-align: center;
+  width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+input {
+  font-size: 22px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  padding: 25px 30px;
+  border-radius: 10px 10px 0 0;
+}
+
+input:focus,
+input:active {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.chart {
+  padding: 0 30px 30px;
+}
+
+canvas {
+}
