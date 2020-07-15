@@ -2,7 +2,9 @@
 
 In this repo, you'll find the starter files and the finished files for the React Apps that we make in the courses: [Make 10 React Apps (Series A)](https://makereactapps.com/10-react-apps-series-a) and [Make 10 React Apps (Series B)](https://makereactapps.com/10-react-apps-series-b)
 
-![](https://i.imgur.com/gTADDDE.png)
+| Series A | Series B |
+| -------- | -------- |
+| [![](https://scotch-res.cloudinary.com/image/upload/q_auto,w_700/v1594571945/d2e337a4f6900f8d0798c596eb0607a8e0c2fbddb6a7ab7afcd60009c119d4c7_evfnlk.png)](https://makereactapps.com/10-react-apps-series-a) | [![](https://scotch-res.cloudinary.com/image/upload/q_auto,w_700/v1594571945/d2e337a4f6900f8d0798c596eb0607a8e0c2fbddb6a7ab7afcd60009c119d4c7_1_nq11gx.png)](https://makereactapps.com/10-react-apps-series-b) |
 
 ## To Start
 
