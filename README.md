@@ -8,7 +8,7 @@ In this repo, you'll find the starter files and the finished files for the React
 
 Clone this repo. Or you can fork it so that you can track your progress in your own repo.
 
-1. Clone it: `git clone git@github.com:chris-on-code/20-react-apps.git`
+1. Clone it: `git clone git@github.com:chris-on-code/make-react-apps.git`
 
 Each application has its own folder. In each app folder is a `finished` and `start` folder. You can see the final app or start working in the start folder with the following steps:
 
@@ -16,24 +16,31 @@ Each application has its own folder. In each app folder is a `finished` and `sta
 2. Install dependencies: `npm install` or `yarn`
 3. Start the React app: `npm start` or `yarn start`
 
-## The 20 Apps + Preview + Demo
+## 10 Apps in Series A
 
-1. [Pomodoro](https://github.com/chris-on-code/20-react-apps/tree/master/pomodoro) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249106-pomodoro/748623-00-pomodoro-preview) - [Demo](https://r36qd.codesandbox.io/)
-1. [Markdown Editor](https://github.com/chris-on-code/20-react-apps/tree/master/markdown-editor) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249710-markdown-editor/748732-00-markdown-editor-preview) - [Demo](https://391jg.codesandbox.io/)
-1. [Browser Tabs](https://github.com/chris-on-code/20-react-apps/tree/master/browser-tabs) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249108-browser-tabs/748775-00-browser-tabs-preview) - [Demo](https://yyhfg.codesandbox.io/)
-1. [Paper Rock Scissors](https://github.com/chris-on-code/20-react-apps/tree/master/paper-rock-scissors) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/249667-paper-rock-scissors/748691-00-paper-rock-scissors-preview) - [Demo](https://njpw4.codesandbox.io/)
-1. [Moving Boxes and Zelda](https://github.com/chris-on-code/20-react-apps/tree/master/moving-box-link) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/250927-moving-boxes-and-zelda/748714-00-moving-boxes-and-link-preview) - [Demo](https://405hq.codesandbox.io/)
-1. [Infinite Image Gallery](https://github.com/chris-on-code/20-react-apps/tree/master/image-gallery) - [Preview](https://courses.chrisoncode.io/courses/make-20-react-apps/257611-infinite-image-gallery/748761-00-infinite-image-gallery-preview) - [Demo](https://e9ucz.csb.app/)
-1. [Trivia](https://github.com/chris-on-code/20-react-apps/tree/master/trivia) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/271017-07-trivia/783724-00-trivia-preview) - [Demo](https://qlb3o.csb.app/)
-1. [Drag and Drop Math Card](https://github.com/chris-on-code/20-react-apps/tree/master/drag-drop-math-card) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/329060-14-drag-and-drop-math-card/938167-00-drag-and-drop-math-card-preview) - [Demo](https://sj1bd.csb.app/)
-1. [Web Speech and Timers](https://github.com/chris-on-code/20-react-apps/tree/master/speech-timers) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/286509-09-web-speech-and-timers/825083-00-web-speech-and-timers-preview) - [Demo](https://4jfqj.csb.app/)
-1. [Calendar Picker](https://github.com/chris-on-code/20-react-apps/tree/master/calendar-picker) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/302585-10-calendar-picker/864913-00-calendar-picker-preview) - [Demo](https://d4vfr.csb.app/)
-1. [Chat Box](https://github.com/chris-on-code/20-react-apps/tree/master/chat-box) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/325003-11-animated-chat-box/927294-00-chat-box-preview) - [Demo](https://9lrdz.csb.app/)
-1. [Multi-Step Form w/ Context](https://github.com/chris-on-code/20-react-apps/tree/master/multi-step-form) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/325871-12-multi-step-form/929787-00-multi-step-form-preview) - [Demo](https://hbkbf.csb.app/)
-1. [Memory Matching Game](https://github.com/chris-on-code/20-react-apps/tree/master/memory-matching) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/326011-13-memory-matching-game/930017-00-memory-matching-preview) - [Demo](https://0dsop.csb.app/)
-1. [Browser](https://github.com/chris-on-code/20-react-apps/tree/master/browser) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/334917-15-browser/954260-00-browser-browser-preview) - [Demo](https://e7ws4.csb.app/)
-1. [Authentication](https://github.com/chris-on-code/20-react-apps/tree/master/authentication) - [Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/284972-08-authentication/821360-00-authentication-preview)
-1. More apps to be added...
+1. [Pomodoro](https://github.com/chris-on-code/make-react-apps/tree/master/A01%20-%20Pomodoro) - [Demo](https://r36qd.codesandbox.io/)
+1. [Markdown Editor](https://github.com/chris-on-code/make-react-apps/tree/master/A02%20-%20Markdown%20Editor) - [Demo](https://391jg.codesandbox.io/)
+1. [Browser Tabs](https://github.com/chris-on-code/make-react-apps/tree/master/A03%20-%20Highlight%20Tabs) - [Demo](https://yyhfg.codesandbox.io/)
+1. [Paper Rock Scissors](https://github.com/chris-on-code/make-react-apps/tree/master/A04%20-%20Paper%20Rock%20Scissors) - [Demo](https://njpw4.codesandbox.io/)
+1. [Moving Boxes and Zelda](https://github.com/chris-on-code/make-react-apps/tree/master/A05%20-%20Moving%20Link) - [Demo](https://405hq.codesandbox.io/)
+1. [Infinite Image Gallery](https://github.com/chris-on-code/make-react-apps/tree/master/A06%20-%20Infinite%20Image%20Gallery) - [Demo](https://e9ucz.csb.app/)
+1. [Trivia Game](https://github.com/chris-on-code/make-react-apps/tree/master/A07%20-%20Trivia%20Game) - [Demo](https://qlb3o.csb.app/)
+1. [Authentication]() 
+1. [Web Speech and Timers](https://github.com/chris-on-code/make-react-apps/tree/master/A09%20-%20Web%20Speech%20and%20Timers) - [Demo](https://4jfqj.csb.app/)
+1. [Calendar Picker](https://github.com/chris-on-code/make-react-apps/tree/master/A10%20-%20Calendar%20Picker) - [Demo](https://d4vfr.csb.app/)
+
+## 10 Apps in Series B
+
+1. [Chat Box](https://github.com/chris-on-code/make-react-apps/tree/master/B01%20-%20Animated%20Chat%20Box) - [Demo](https://9lrdz.csb.app/)
+1. [Multi-Step Form w/ Context](https://github.com/chris-on-code/make-react-apps/tree/master/B02%20-%20Multi-Step%20Form) - [Demo](https://hbkbf.csb.app/)
+1. [Memory Matching Game](https://github.com/chris-on-code/make-react-apps/tree/master/B03%20-%20Memory%20Matching%20Game) - [Demo](https://0dsop.csb.app/)
+1. [Drag and Drop Math Card](https://github.com/chris-on-code/make-react-apps/tree/master/A08%20-%20Authentication) - [Demo](https://sj1bd.csb.app/)
+1. [Browser](https://github.com/chris-on-code/make-react-apps/tree/master/B05%20-%20Browser) - [Demo](https://e7ws4.csb.app/)
+1. [Real-Time Search](https://github.com/chris-on-code/make-react-apps/tree/master/B06%20-%20Real-Time%20Search) - [Demo](https://e7ws4.csb.app/)
+1. [Chart the Weather](https://github.com/chris-on-code/make-react-apps/tree/master/B07%20-%20Chart%20the%20Weather) - [Demo](https://e7ws4.csb.app/)
+1. [Shopping Cart]()
+1. [Typing Speed Game]()
+1. [Gatsby Site]()
 
 ## Getting Help
 
