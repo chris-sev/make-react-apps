@@ -2,9 +2,9 @@
 
 Lots of tools component work within this app to build a Paper, Rock, Scissors game.
 
-[View Demo](https://njpw4.codesandbox.io/) - [Watch a Preview](https://learn.chrisoncode.io/courses/make-20-react-apps/249667-paper-rock-scissors/748691-00-paper-rock-scissors-preview) - [Buy the Course](https://MakeReactApps.com/?utm_source=github.com&utm_medium=readme)
+[View Demo](https://njpw4.codesandbox.io/) - [Watch a Preview](https://learn.chrisoncode.io/courses/10-react-apps-series-a/348623-04-paper-rock-scissors/992070-00-paper-rock-scissors-preview) - [Buy the Course](https://MakeReactApps.com/?utm_source=github.com&utm_medium=readme)
 
-[![](https://scotch-res.cloudinary.com/video/upload/vs_50,dl_200,e_loop/v1592352061/04_-_rock_paper_scissors_oupoes.gif)](https://learn.chrisoncode.io/courses/make-20-react-apps/249667-paper-rock-scissors/748691-00-paper-rock-scissors-preview)
+[![](https://scotch-res.cloudinary.com/video/upload/vs_50,dl_200,e_loop/v1592352061/04_-_rock_paper_scissors_oupoes.gif)](https://learn.chrisoncode.io/courses/10-react-apps-series-a/348623-04-paper-rock-scissors/992070-00-paper-rock-scissors-preview)
 
 ### React skills used in this app
 
