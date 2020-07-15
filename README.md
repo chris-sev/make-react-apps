@@ -1,6 +1,6 @@
 # Make 20 React Apps
 
-In this repo, you'll find the starter files and the finished files for the 20 React Apps that we make in the course: [Make 20 React Apps](https://20ReactApps.com)
+In this repo, you'll find the starter files and the finished files for the 20 React Apps that we make in the course: [Make 20 React Apps](https://MakeReactApps.com)
 
 ![](https://i.imgur.com/gTADDDE.png)
 
