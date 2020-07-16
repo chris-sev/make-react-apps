@@ -8,6 +8,7 @@ All of this is meant to make us the most efficient and fast developers possible.
 
 ## Settings
 
+- Auto save after delay
 - Auto format on save. Let Prettier handle formatting for us.
 - Cursor smooth caret animation on. A cool little effect
 - Line height greater than 2
