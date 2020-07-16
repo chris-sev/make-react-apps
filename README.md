@@ -20,6 +20,8 @@ Each application has its own folder. In each app folder is a `finished` and `sta
 
 ## 10 Apps in Series A
 
+[View 10 React Apps (Series A)](https://makereactapps.com/10-react-apps-series-a)
+
 1. [Pomodoro](https://github.com/chris-on-code/make-react-apps/tree/master/A01%20-%20Pomodoro) - [Demo](https://r36qd.codesandbox.io/)
 1. [Markdown Editor](https://github.com/chris-on-code/make-react-apps/tree/master/A02%20-%20Markdown%20Editor) - [Demo](https://391jg.codesandbox.io/)
 1. [Browser Tabs](https://github.com/chris-on-code/make-react-apps/tree/master/A03%20-%20Highlight%20Tabs) - [Demo](https://yyhfg.codesandbox.io/)
@@ -32,6 +34,8 @@ Each application has its own folder. In each app folder is a `finished` and `sta
 1. [Calendar Picker](https://github.com/chris-on-code/make-react-apps/tree/master/A10%20-%20Calendar%20Picker) - [Demo](https://d4vfr.csb.app/)
 
 ## 10 Apps in Series B
+
+[View 10 React Apps (Series B)](https://makereactapps.com/10-react-apps-series-b)
 
 1. [Chat Box](https://github.com/chris-on-code/make-react-apps/tree/master/B01%20-%20Animated%20Chat%20Box) - [Demo](https://9lrdz.csb.app/)
 1. [Multi-Step Form w/ Context](https://github.com/chris-on-code/make-react-apps/tree/master/B02%20-%20Multi-Step%20Form) - [Demo](https://hbkbf.csb.app/)
