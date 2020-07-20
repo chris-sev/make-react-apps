@@ -32,11 +32,17 @@ export default function App() {
 
     if (choosingType === 'end') {
       setEndDate(chosenDay);
+      setChoosingType('start'); //for the case choose the end date before start date
     }
   }
 
   function checkInBetween(day) {
     if (startDate && !endDate) return day > startDate && day < hoverDate;
+
+    // Chosen end date first and show hover to before date properly
+    // awesome addition to handle choosing end date first by https://github.com/tunglam87
+    if (endDate && !startDate) return day < endDate && day > hoverDate;
+    
     return day > startDate && day < endDate;
   }
 
