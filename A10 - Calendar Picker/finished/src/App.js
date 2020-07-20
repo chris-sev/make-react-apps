@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
-import './App.css';
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
+import "./App.css";
 
 const calendarDates = Array(31)
   .fill(0)
   .map((e, i) => i);
 
 export default function App() {
-  const [choosingType, setChoosingType] = useState('start'); // start or end
+  const [choosingType, setChoosingType] = useState("start"); // start or end
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [hoverDate, setHoverDate] = useState(null);
@@ -16,27 +16,30 @@ export default function App() {
     // handle if a user chose before our current range
     if (startDate && chosenDay < startDate) {
       setStartDate(chosenDay);
-      return setChoosingType('end');
+      return setChoosingType("end");
     }
 
     // handle if a user chose after our current range
     if (endDate && chosenDay > endDate) {
       setEndDate(chosenDay);
-      return setChoosingType('end');
+      return setChoosingType("end");
     }
 
-    if (choosingType === 'start') {
+    if (choosingType === "start") {
       setStartDate(chosenDay);
-      return setChoosingType('end');
+      return setChoosingType("end");
     }
 
-    if (choosingType === 'end') {
+    if (choosingType === "end") {
       setEndDate(chosenDay);
+      setChoosingType("start"); //for the case choose the end date before start date
     }
   }
 
   function checkInBetween(day) {
     if (startDate && !endDate) return day > startDate && day < hoverDate;
+    //Choosen end date first and show hover to before date properly
+    if (endDate && !startDate) return day < endDate && day > hoverDate;
     return day > startDate && day < endDate;
   }
 
@@ -44,14 +47,14 @@ export default function App() {
     <>
       <StyledDateChooser>
         <StyledDateChooserButton
-          onClick={() => setChoosingType('start')}
-          isChoosing={choosingType === 'start'}
+          onClick={() => setChoosingType("start")}
+          isChoosing={choosingType === "start"}
         >
           Start Date <span>{startDate}</span>
         </StyledDateChooserButton>
         <StyledDateChooserButton
-          onClick={() => setChoosingType('end')}
-          isChoosing={choosingType === 'end'}
+          onClick={() => setChoosingType("end")}
+          isChoosing={choosingType === "end"}
         >
           End Date <span>{endDate}</span>
         </StyledDateChooserButton>
@@ -96,7 +99,7 @@ const StyledDateChooserButton = styled.button`
   border: none;
   border-bottom: 2px solid rgba(11, 32, 76, 0.2);
   outline: none;
-  border-color: ${(props) => (props.isChoosing ? '#0b204c' : 'none')};
+  border-color: ${(props) => (props.isChoosing ? "#0b204c" : "none")};
 
   span {
     display: block;
