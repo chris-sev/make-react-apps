@@ -43,6 +43,9 @@ export default function App() {
   }, [matched]);
 
   function flipCard(index) {
+    // if same card was clicked
+    if (opened.includes(index)) return;
+
     setMoves((moves) => moves + 1);
     setOpened((opened) => [...opened, index]);
   }
