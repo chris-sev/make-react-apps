@@ -64,6 +64,7 @@ header a:hover {
 .cart-button {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cart-button > button {
@@ -96,8 +97,8 @@ header a:hover {
   border: 2px solid #555;
   color: #333;
   border-radius: 10px;
-  top: 100px;
-  right: 300px;
+  top: 65px;
+  right: 0;
   box-shadow: 5px 5px 0 #555;
 }
 
