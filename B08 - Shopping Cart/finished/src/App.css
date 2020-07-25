@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap');
+
+body {
+  font-family: 'MuseoModerno', cursive;
+  padding-top: 80px;
+  color: #333;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e9e9e9' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 50px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header .container {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header a,
+header button {
+  text-decoration: none;
+  color: #ddd;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+}
+
+header a:hover {
+  color: #fff;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-button > button {
+  margin-left: 8px;
+  padding: 15px 15px;
+  font-size: 18px;
+  outline: none;
+  color: #ccc;
+  background: #333;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-button > button:hover {
+  background: #444;
+}
+
+.cart-button > button img {
+  margin-right: 10px;
+}
+
+.cart-modal {
+  /* display: none; */
+  overflow: hidden;
+  position: absolute;
+  width: 300px;
+  background: #fff;
+  border: 2px solid #555;
+  color: #333;
+  border-radius: 10px;
+  top: 65px;
+  right: 0;
+  box-shadow: 5px 5px 0 #555;
+}
+
+.checkout {
+  display: block;
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.product {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #555;
+  box-shadow: 5px 5px 0 #555;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 3px;
+  margin: 0;
+}
+
+.product h3 {
+  margin: 10px 0 15px;
+  font-size: 22px;
+}
+
+.product-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.product-buttons button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.product-buttons .add {
+  background: #83e7aa;
+  color: #268048;
+}
+
+.product-buttons .remove {
+  background: #f87171;
+  color: #942727;
+}
+
+.cart-item {
+  display: flex;
+  padding: 10px;
+}
+
+.cart-item img {
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.cart-item h3 {
+  font-size: 18px;
+}
+
+.cart-buttons {
+  display: flex;
+}
+
+.cart-buttons button {
+  font-size: 16px;
+  padding: 6px 10px;
+  color: #888;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.cart-modal .checkout {
+  display: block;
+  background: #333;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.total {
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 22px;
+  background: #142745;
+  color: #a3c3f8;
+}
