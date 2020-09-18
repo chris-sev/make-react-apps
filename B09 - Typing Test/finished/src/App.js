@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useCountDown from 'react-countdown-hook';
 import './App.css';
 
 // to calculate typing speed
 // words typed / minutes
-// words typed = characters / 5
+// words typed = characters - typos / 5
 
-const secondsToCount = 10;
+const secondsToCount = 15;
 const paragraph = `Coding is the best. We are able to build something from scratch. It is literally imagination incarnate. Solving our own problems through coding is one of the coolest things we could do!`;
 
-function findDiff(str1, str2) {
-  let diff = [];
-  str2.split('').forEach(function (val, i) {
-    if (val !== str1.charAt(i)) diff.push(i);
+function findTypos(str1, str2) {
+  let typos = [];
+
+  str2.split('').forEach(function (character, index) {
+    if (character !== str1.charAt(index)) typos.push(index);
   });
-  return diff;
+
+  return typos;
 }
 
 export default function App() {
@@ -22,25 +24,23 @@ export default function App() {
   const [typedText, setTypedText] = useState('');
   const [typoIndexes, setTypoIndexes] = useState([]);
 
-  // check to see where the typo is and update typoIndex
+  // finding the typos
   useEffect(() => {
-    setTypoIndexes(findDiff(paragraph, typedText));
+    setTypoIndexes(findTypos(paragraph, typedText));
   }, [typedText]);
 
-  // calculate wpm when timer hits 0
+  // calculate the wpm when the timer hits 0
   useEffect(() => {
     if (typedText.length === 0) return;
     if (timeLeft !== 0) return;
 
-    const wpm = calculateWpm();
-    return alert(`You type at ${wpm.toFixed(2)} WPM!`);
+    // calculate words typed
+    const wordsTyped = (typedText.length - typoIndexes.length) / 5;
+    const minMultiplier = 60 / secondsToCount;
+    const wpm = wordsTyped * minMultiplier;
 
-    function calculateWpm() {
-      return (
-        ((typedText.length - typoIndexes.length) / 5) * (60 / secondsToCount)
-      );
-    }
-  }, [timeLeft, typedText, typoIndexes]);
+    alert(`You type at a ${wpm.toFixed(2)} WPM!`);
+  }, [timeLeft]);
 
   function startTimer() {
     setTypedText('');
@@ -57,28 +57,30 @@ export default function App() {
       {/* sidebar */}
       <div className="sidebar">
         <div className="timer">{(timeLeft / 1000).toFixed(2)}</div>
-        <button className="start" onClick={startTimer}>
+        <button className="start" onClick={() => startTimer()}>
           Start
         </button>
-        <button className="reset" onClick={resetTimer}>
-          Restart
+        <button className="reset" onClick={() => resetTimer()}>
+          Reset
         </button>
       </div>
 
       <div className="content">
         {/* show the paragraph */}
         <p>
-          {paragraph.split('').map((e, i) => {
+          {paragraph.split('').map((character, index) => {
+            // check what class to apply to each character
             let characterClass = '';
-            const hasBeenTyped = typedText.length > i;
-            if (hasBeenTyped)
-              characterClass = typoIndexes.includes(i)
+            const hasBeenTyped = typedText.length > index;
+            if (hasBeenTyped) {
+              characterClass = typoIndexes.includes(index)
                 ? 'incorrect'
                 : 'correct';
+            }
 
             return (
-              <span key={i} className={characterClass}>
-                {e}
+              <span key={index} className={characterClass}>
+                {character}
               </span>
             );
           })}
@@ -91,7 +93,6 @@ export default function App() {
             onChange={(e) => setTypedText(e.target.value)}
             rows="10"
             placeholder="Test your typing skills..."
-            disabled={timeLeft === 0}
           />
         </form>
       </div>
