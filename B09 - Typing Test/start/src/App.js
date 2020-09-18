@@ -3,7 +3,7 @@ import './App.css';
 
 // to calculate typing speed
 // words typed / minutes
-// words typed = characters / 5
+// words typed = (characters - typos) / 5
 
 const secondsToCount = 10;
 const paragraph = `Coding is the best. We are able to build something from scratch. It is literally imagination incarnate. Solving our own problems through coding is one of the coolest things we could do!`;
@@ -15,7 +15,7 @@ export default function App() {
       <div className="sidebar">
         <div className="timer">00</div>
         <button className="start">Start</button>
-        <button className="reset">Restart</button>
+        <button className="reset">Reset</button>
       </div>
 
       <div className="content">
