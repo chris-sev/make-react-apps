@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  background: #ddd8f0;
+  line-height: 1.7;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  padding: 50px;
+}
+
+.sidebar {
+  margin-right: 30px;
+  min-width: 200px;
+}
+
+p {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  font-size: 21px;
+  margin: 0;
+}
+
+.correct {
+  color: #6ece4f;
+}
+
+.incorrect {
+  color: #be3127;
+}
+
+textarea {
+  background: rgba(255, 255, 255, 0.7);
+  color: #444;
+  line-height: 1.7;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px;
+  font-size: 21px;
+}
+
+textarea:focus {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.timer {
+  background: #48bb78;
+  color: #f0fff4;
+  font-size: 40px;
+  padding: 20px 5px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border: none;
+  outline: none;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.start {
+  background: #4299e1;
+  color: #ebf8ff;
+}
